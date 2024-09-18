@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.mainFrame {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration-line: underline;
+}
+
+.title {
+    font-size: 20px;
+    color: #555;
+}
+
+.profile img {
+    float: inline-start;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile img:hover {
+    opacity: 0.3;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.socials a {
+    font-weight: 300;
+    row-gap: 10px;
+    color: blue;
+    text-decoration: none;
+    padding-inline-start: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+}
+
+/* for tabs */
+@media (max-width: 768px) {
+    .mainFrame {
+        padding: 15px;
+    }
+
+    header {
+        font-size: 18px;
+    }
+    .profile img {
+        width: 80px;
+        height: 80px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    video, audio {
+        width: 100%;
+    }
+}
+/* for mobile */
+@media (max-width: 365px) {
+    .mainFrame {
+        padding: 10px;
+    }
+
+    header {
+        font-size: 10px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .socials {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    video, audio {
+        width: 100%;
+    }
+}
