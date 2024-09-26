@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 03</title>
+	<link rel="stylesheet" type="text/css" href="table.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <h1>CHANDRAKIRAN GUTHAVARI RAMESH - 002057291</h1>
+</head>
+<body>
+	<table id="myTable">
+        <thead>
+		    <tr>
+			    <th></th>
+			    <th>STUDENT</th>
+			    <th>ADVISOR</th>
+			    <th>AWARD<br/>STATUS</th>
+			    <th>SEMESTER</th>
+			    <th>TYPE</th>
+			    <th>BUDGET<br />#</th>
+			    <th>PERCENTAGE</th>
+			    <th class="dynamicEdit" style="display: none;">EDIT</th>
+                <th class="dynamicDel" style="display: none;">DELETE</th>
+		    </tr>
+        </thead>
+        <tbody>
+		    <tr>
+			    <td><input type="checkbox" onclick="selectRecord(this)"/><br /><br />
+                <img src="down.png" width="25px" onclick="toggleDropDown(this)"/></td>
+			    <td>Student 1</td>
+			    <td>Teacher 1</td>
+			    <td>Approved</td>
+			    <td>Fall</td>
+			    <td>TA</td>
+			    <td>12345</td>
+			    <td>100%</td>
+                <td class="dynamicEdit" style="display: none;"><button id="editBtn" style="display: none;" onclick="onEditRow(this)">Edit</button></td>
+			    <td class="dynamicDel" style="display: none;"><button id="delBtn" style="display: none;" onclick="onDeleteRow(this)">Delete</button></td>
+		    </tr>
+		    <tr class="dropDownTextArea" style="display: none;">
+                <td colspan="8">
+			        Advisor:<br /><br />
+			        Award Details<br />
+			        Summer 1-2014(TA)<br />
+			        Budget Number: <br />
+			        Tuition Number: <br />
+			        Comments:<br /><br /><br />
+			        Award Status:<br /><br /><br />
+		        </td>
+            </tr>
+        </tbody>
+	</table>
+	<br /><br />
+
+	<button id="submitBtn">SUBMIT SELECTED AWARDS</button>
+	<button id="add" onclick="addRecord(this)">Add New Student </button>
+	<script src="script.js"></script>
+</body>
+</html>
