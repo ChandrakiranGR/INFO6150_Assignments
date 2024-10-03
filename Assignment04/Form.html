@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {
+        float: left;
+        width: 150px;
+    }
+    #container {
+        width: auto;
+        margin: auto;
+        background-color: beige;
+    }
+    main {
+        padding: 50px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+ </head>
+ <body>
+ <div id="container">
+
+    <main>
+        <h2>Feedback</h2>
+        <h3>Love something? Hate something? Let us know!</h3>
+        Note: Fields marked with an asterisk (*) are mandatory
+        <br><br>
+        <form id="feedback-form" method="post" novalidate>
+            <label>Title*:</label>
+            <input type="radio" name="title" id="miss" value="miss" required="required"/> Miss
+            <input type="radio" name="title" id="mr" value="mr" required="required"/> Mr.
+            <input type="radio" name="title" id="mrs" value="mrs" required="required"/> Mrs.
+            <div class="error" id="error-title">Please select a Title</div>
+
+            <br><br>
+            <label for="firstName">First Name*:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" style="width: 200px;" />
+            <span class="error" id="error-firstName">Please enter a correct First Name</span>
+            <br><br>
+
+            <label for="lastName">Last Name*:</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" style="width: 200px;" />
+            <span class="error" id="error-lastName">Please enter a correct Last Name</span>
+
+            <br><br>
+
+            <label for="emailId">Email Id*:</label>
+            <input type="text" name="emailId" id="emailId" placeholder="yourname@northeastern.edu" style="width: 200px;" />
+            <span class="error" id="error-emailId">Please enter a correct Email Id</span>
+
+            <br><br>
+
+            <label for="phoneNumber">Phone Number*:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" style="width: 200px;" />
+            <span class="error" id="error-phoneNumber">Please enter a correct Phone Number</span>
+
+            <br><br>
+
+            <label for="streetAddress1">Street Address 1*:</label>
+            <input type="text" name="streetAddress1" id="streetAddress1" placeholder="Address Line" style="width: 200px;" />
+            <span class="error" id="error-addressLine">Please enter the Address</span>
+
+            <br><br>
+
+            <label for="streetAddress">Street Address 2:</label>
+            <input type="text" name="streetAddress" id="streetAddress2" placeholder="Address Line" style="width: 200px;" />
+
+            <br><br>
+
+            <label for="zipcode">ZipCode*:</label>
+            <input type="text" name="zipcode" id="zipCode" placeholder="xxxxxx" style="width: 200px;" />
+            <span class="error" id="error-zipCode">Please enter a correct Zip Code</span>
+
+            <br><br>
+
+            <label for="products">Choose Product*:</label>
+            <select id="dropDown" name="dropDown" required>
+                <option value="">--Please choose an option--</option>
+                <option value="Option 1">Hot Drinks</option>
+                <option value="Option 2">Cold Coffee</option>
+                <option value="Option 3">Beverages</option>
+                <option value="Option 4">Blended Beverages</option>
+                <option value="Option 5">Bottled Beverages</option>
+            </select>
+            <span class="error" id="error-product">Please select a product</span>
+
+            <br><br>
+
+            <div style="display: flex;" id="dynamic-checkboxes"></div>
+
+            <br><br>
+
+            <label>How did you hear*:</label>
+            <input type='checkbox' name="source" value="facebook" required="required"/> Facebook
+            <input type='checkbox' name="source" value="google" required="required" /> Google
+            <input type='checkbox' name="source" value="yelp" required="required"/> Yelp
+            <div class="error" id="error-source">Please select at least one option</div>
+
+            <br><br>
+
+            <label for="comments">Comments*:</label>
+            <textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+            <div class="error" id="error-comments">Please enter correct Comments</div>
+            <br><br>
+            <input type="Submit" value="Submit Feedback" id="submitButton" disabled>
+            <input type="Reset" onclick="resetForm()">
+            <br><br>
+        </form>
+    </main>
+ </div>
+
+ <script src="script.js"></script>
+
+ </body>
+</html>
