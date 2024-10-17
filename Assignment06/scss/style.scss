@@ -1,13 +1,13 @@
-@import 'variables';
-@import 'mixins';
-@import 'colors';
-@import 'header';
-@import 'footer';
-@import 'forms';
-@import 'buttons';
-@import 'menu';
-@import 'landing';
-@import 'login';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'themes/colors';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/footer';
+@import 'components/forms';
+@import 'components/buttons';
+@import 'layouts/landing';
+@import 'layouts/login';
 
 header{
     width: 100%;
