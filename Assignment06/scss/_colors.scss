@@ -1,0 +1,7 @@
+@function darken-color($color, $amount: 10%) {
+    @return darken($color, $amount);
+  }
+
+  .button {
+    background-color: darken-color($primary-color, 15%);
+  }

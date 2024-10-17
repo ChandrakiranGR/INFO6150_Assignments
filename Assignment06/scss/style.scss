@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'mixins';
+@import 'colors';
+@import 'header';
+@import 'footer';
+@import 'forms';
+@import 'buttons';
+@import 'menu';
+@import 'landing';
+@import 'login';
+
+header{
+    width: 100%;
+}
+
+.menu a{
+    text-decoration: none;
+}

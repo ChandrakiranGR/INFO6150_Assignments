@@ -1,0 +1,8 @@
+$sizes: small, medium, large;
+$sizes-map: (small: 10px, medium: 15px, large: 20px);
+
+@each $size in $sizes {
+  .button-#{$size} {
+    padding: map-get($sizes-map, $size);
+  }
+}

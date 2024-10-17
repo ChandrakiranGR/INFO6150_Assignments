@@ -1,0 +1,186 @@
+:root {
+  --primary-color: #c08e8e;
+  --secondary-color: #333;
+  --light-color: #fcfcfc;
+}
+
+.button {
+  background-color: #a55d5d;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #c08e8e;
+  color: rgb(248, 248, 248);
+  text-align: center;
+  padding: 20px;
+}
+header .header-content {
+  display: flex;
+  align-items: center;
+}
+header .header-content img {
+  width: 100px;
+  height: 100px;
+}
+header .header-content h1, header .header-content h3 {
+  margin: 0;
+}
+
+footer {
+  background-color: #c08e8e;
+  color: #fcfcfc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer a {
+  color: #fcfcfc;
+  text-decoration: none;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+  padding: 20px;
+  width: 500px;
+  padding-left: 350px;
+}
+form label {
+  grid-column: 1;
+}
+form input[type=text], form input[type=email], form input[type=tel] {
+  grid-column: 2;
+  padding: 10px;
+  width: 100%;
+}
+
+button {
+  background-color: #333;
+  color: #fcfcfc;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #1a1a1a;
+}
+
+.button-small {
+  padding: 10px;
+}
+
+.button-medium {
+  padding: 15px;
+}
+
+.button-large {
+  padding: 20px;
+}
+
+.menu {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+.menu ul {
+  display: flex;
+  gap: 20px;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a {
+  color: #fcfcfc;
+  padding: 10px 15px;
+}
+.menu ul li a:hover {
+  background-color: #595959;
+}
+
+#categories {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  display: flex;
+  display: grid;
+  background-color: #D3DEDC;
+  height: 600px;
+  grid-template-rows: 600px 2fr 13px;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  place-items: center;
+}
+#categories img {
+  width: 200px;
+  height: 200px;
+}
+#categories video {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 600px) {
+  #categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+table {
+  width: 90%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f9fc;
+}
+.login-wrapper .image-section {
+  flex: 1;
+  background-image: url(../Images/favicon.jpg);
+  background-size: cover;
+  border-radius: 10px 0 0 10px;
+}
+.login-wrapper .login-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-wrapper button {
+  background-color: #333;
+  color: #fcfcfc;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+.login-wrapper button:hover {
+  background-color: #1a1a1a;
+}
+
+header {
+  width: 100%;
+}
+
+.menu a {
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

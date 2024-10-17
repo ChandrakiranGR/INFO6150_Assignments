@@ -1,0 +1,23 @@
+@mixin button-style {
+  background-color: $secondary-color;
+  color: $light-color;
+  padding: $button-padding;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'small' {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium' {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+}
