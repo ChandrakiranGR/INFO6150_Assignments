@@ -46,9 +46,6 @@ $(document).ready(() => {
     $('#start').click(startTimer);
     $('#stop').click(stopTimer);
     $('#reset').click(resetTimer);
-    $('#datePicker').on('change', function() {
-        $(this).prop('readonly', true);
-    });
     const today = new Date().toISOString().split('T')[0];
     $('#datePicker').val(today);
 });
