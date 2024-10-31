@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stopwatch">
+        <h1 style="margin-bottom: 20px;">Stopwatch</h1>
+       <span>TIMER - </span> <label style="margin-left: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="time">00:00:00</label>
+      <br> DATE - &nbsp; <input style="width: 150px;"  type="date" id="datePicker">
+        <button style="width: 100px; display: flex;margin-left: 10px;"id="start">Start</button>
+        <button style="width: 100px;display: flex;margin-left: 10px"id="stop">Stop</button>
+        <button style="width: 100px;display: flex;margin-left: 10px"id="reset">Reset</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="stopwatch.js"></script>
+</body>
+</html>

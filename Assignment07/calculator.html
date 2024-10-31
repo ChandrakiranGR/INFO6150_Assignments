@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h2>Welcome, <span id="Display"></span><br>Calculate quickerrr</h2>
+        <label>Enter Number 1:</label>
+        <input type="text" id="num1">
+        <div class="error" id="num1Error"></div>
+
+        <label>Enter Number 2:</label>
+        <input type="text" id="num2">
+        <div class="error" id="num2Error"></div>
+
+        <button id="add">Add</button>
+        <button id="subtract">Subtract</button>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+        <label>Result :</label>
+        <input type="text" id="result" class="result" readonly>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>

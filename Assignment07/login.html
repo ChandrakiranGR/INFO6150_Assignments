@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="text-align: center;"> Assignment 06 - Part A</h1>
+    <div class="login-form">
+        <h2 style="text-align: center;">Login</h2>
+        <input type="email" id="email" placeholder="Email (Northeastern only)">
+        <div class="error" id="emailError"></div>
+
+        <input type="text" id="username" placeholder="Username">
+        <div class="error" id="usernameError"></div>
+
+        <input type="password" id="password" placeholder="Password">
+        <div class="error" id="passwordError"></div>
+
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <div class="error" id="confirmPasswordError"></div>
+
+        <button id="loginBtn" disabled>Login</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
