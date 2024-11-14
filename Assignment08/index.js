@@ -13,4 +13,4 @@ mongoose.connect(MONGO_URI, {
 }).then(() => console.log('Connected to MongoDB')).catch(err => console.log(err));
 
 app.use('/user', userRoutes);
-app.listen(3000, () => console.log(`Server running on port 3000`));
+app.listen(3009, () => console.log(`Server running on port 3009`));
