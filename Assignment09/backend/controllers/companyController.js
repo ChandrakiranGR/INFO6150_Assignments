@@ -2,7 +2,6 @@ const Company = require('../models/company');
 const multer = require('multer');
 const path = require('path');
 
-// Configure multer storage and file filtering
 const storage = multer.diskStorage({
     destination: './uploads',
     filename: (req, file, cb) => {
@@ -24,7 +23,6 @@ const upload = multer({
     }
 });
 
-// Function to fetch companies
 exports.getCompanies = async (req, res) => {
     try {
         const companies = await Company.find();
@@ -35,7 +33,6 @@ exports.getCompanies = async (req, res) => {
     }
 };
 
-// Function to upload a new company
 exports.uploadCompany = async (req, res) => {
     upload.single('image')(req, res, async (err) => {
         if (err) {

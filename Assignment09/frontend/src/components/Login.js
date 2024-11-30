@@ -1,77 +1,89 @@
 import React, { useState } from 'react';
-import axiosInstance from '../api/axiosInstance';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/actions/authActions';
 import { useNavigate } from 'react-router-dom';
-import { Container, Typography, TextField, Button, Box, Alert } from '@mui/material';
+import {
+    Container,
+    TextField,
+    Button,
+    Alert,
+    CircularProgress,
+    Typography,
+    Box,
+    Paper,
+} from '@mui/material';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { error } = useSelector((state) => state.auth);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(null);
+        setLoading(true);
 
         try {
-            const response = await axiosInstance.post('/login', { email, password });
-            if (response.status === 200) {
-                console.log('Login successful:', response.data);
-                navigate('/home');
-            }
-        } catch (error) {
-            if (error.response && error.response.data) {
-                setError(error.response.data.message);
-            } else {
-                setError('An error occurred. Please try again.');
-            }
-            console.error('Login error:', error);
+            await dispatch(login(email, password));
+            const userType = localStorage.getItem('userType');
+            navigate(userType === 'admin' ? '/admin/employees' : '/employee/jobs');
+        } catch (err) {
+            console.error('Login failed', err);
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-        <Container maxWidth="xs">
-            <Box sx={{ mt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <Typography variant="h4" gutterBottom>
-                    Login
-                </Typography>
-                <form onSubmit={handleSubmit} style={{ width: '100%', marginTop: '16px' }}>
+        <Container maxWidth="sm" sx={{ mt: 10 }}>
+            <Paper elevation={3} sx={{ padding: 4 }}>
+                <Box display="flex" flexDirection="column" alignItems="center">
+                <Typography variant="h3" gutterBottom>
+                        Welcome to Job Portal
+                    </Typography>
+                    <Typography variant="h4" gutterBottom>
+                        Login
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        Enter your credentials to access your account
+                    </Typography>
+                </Box>
+                <form onSubmit={handleSubmit}>
                     <TextField
                         label="Email"
-                        variant="outlined"
+                        type="email"
                         fullWidth
                         margin="normal"
-                        type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                     <TextField
                         label="Password"
-                        variant="outlined"
+                        type="password"
                         fullWidth
                         margin="normal"
-                        type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    {error && (
-                        <Alert severity="error" sx={{ mt: 2 }}>
-                            {error}
-                        </Alert>
-                    )}
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        sx={{ mt: 3, mb: 2 }}
-                    >
-                        Login
-                    </Button>
+                    {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>}
+                    <Box display="flex" justifyContent="center" mt={3}>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            sx={{ py: 1.5 }}
+                            disabled={loading}
+                        >
+                            {loading ? <CircularProgress size={24} color="inherit" /> : 'Login'}
+                        </Button>
+                    </Box>
                 </form>
-            </Box>
+            </Paper>
         </Container>
     );
 };

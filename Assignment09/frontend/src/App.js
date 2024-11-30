@@ -1,25 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import EmployeeNav from './components/EmployeeNav';
+import AdminNav from './components/AdminNav';
 import Login from './components/Login';
-import Home from './components/Home';
-import JobListings from './components/JobListings';
-import CompanyShowcase from './components/CompanyShowcase';
-import AboutUs from './components/AboutUs';
-import ContactUs from './components/ContactUs';
+import Employees from './pages/admin/Employees';
+import AddJobs from './pages/admin/AddJobs';
+import Jobs from './pages/employee/Jobs';
 
-function App() {
+const App = () => {
+    const { userType, isAuthenticated } = useSelector((state) => state.auth);
+
     return (
         <Router>
+            {isAuthenticated && userType === 'admin' && <AdminNav />}
+            {isAuthenticated && userType === 'employee' && <EmployeeNav />}
             <Routes>
                 <Route path="/" element={<Login />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/jobs" element={<JobListings />} />
-                <Route path="/companies" element={<CompanyShowcase />} />
-                <Route path="/about" element={<AboutUs/>} />
-                <Route path="/contact" element={<ContactUs/>} />
+                {isAuthenticated && userType === 'admin' && (
+                    <>
+                        <Route path="/admin/employees" element={<Employees />} />
+                        <Route path="/admin/add-jobs" element={<AddJobs />} />
+                    </>
+                )}
+                {isAuthenticated && userType === 'employee' && (
+                    <Route path="/employee/jobs" element={<Jobs />} />
+                )}
+                <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </Router>
     );
-}
+};
 
 export default App;
